@@ -8,7 +8,8 @@ socket.on('message', (message) => {
 document.querySelector('#message-form').addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const input = document.querySelector('#message');
-    socket.emit('sendMessage', input.value);
+    const input = e.target.elements.message;
+    const message = input.value;
+    socket.emit('sendMessage', message);
     input.value = '';
 });
