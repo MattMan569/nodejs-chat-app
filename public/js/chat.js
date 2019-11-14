@@ -1,4 +1,12 @@
-require('@types/socket.io-client');
-
 // eslint-disable-next-line no-undef
-io();
+const socket = io();
+
+socket.on('countUpdated', (count) => {
+    console.log('The count has been updated!', count);
+});
+
+document.querySelector('#increment').addEventListener('click', () => {
+    console.log('Clicked');
+
+    socket.emit('increment');
+});
