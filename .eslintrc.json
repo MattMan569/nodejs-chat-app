@@ -3,7 +3,8 @@
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "google"
@@ -16,5 +17,9 @@
         "ecmaVersion": 2018
     },
     "rules": {
+        "indent": ["error", 4],
+        "max-len": "off",
+        "no-undef": "error",
+        "no-multiple-empty-lines": ["error", {"max": 1}]
     }
 }
