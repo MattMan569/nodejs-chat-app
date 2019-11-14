@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/MattMan569/nodejs-chat-app/issues"
   },
-  "homepage": "https://github.com/MattMan569/nodejs-chat-app#readme"
+  "homepage": "https://github.com/MattMan569/nodejs-chat-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-google": "^0.14.0"
+  }
 }
