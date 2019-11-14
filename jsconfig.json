@@ -1,7 +1,8 @@
 {
     "typeAcquisition": {
         "include": [
-            "socket.io"
+            "socket.io",
+            "mustache"
         ]
     }
 }
