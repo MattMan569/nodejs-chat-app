@@ -25,6 +25,7 @@
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
+    "@types/moment": "^2.13.0",
     "@types/mustache": "^0.8.32",
     "eslint": "^6.6.0",
     "eslint-config-google": "^0.14.0",

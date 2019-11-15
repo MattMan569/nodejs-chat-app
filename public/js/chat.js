@@ -16,16 +16,20 @@ socket.on('message', (message) => {
     console.log(message);
     // eslint-disable-next-line no-undef
     const html = Mustache.render(messageTemplate, {
-        message,
+        message: message.text,
+        // eslint-disable-next-line no-undef
+        createdAt: moment(message.createdAt).format('h:mm a'),
     });
     $messages.insertAdjacentHTML('beforeend', html);
 });
 
-socket.on('locationMessage', (url) => {
-    console.log(url);
+socket.on('locationMessage', (message) => {
+    console.log(message);
     // eslint-disable-next-line no-undef
     const html = Mustache.render(locationMessageTemplate, {
-        url,
+        url: message.url,
+        // eslint-disable-next-line no-undef
+        createdAt: moment(message.createdAt).format('h:mm a'),
     });
     $messages.insertAdjacentHTML('beforeend', html);
 });
