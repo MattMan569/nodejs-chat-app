@@ -11,6 +11,7 @@ const $messages = document.querySelector('#messages');
 // Templates
 const messageTemplate = document.querySelector('#message-template').innerHTML;
 const locationMessageTemplate = document.querySelector('#location-message-template').innerHTML;
+const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML;
 
 // Options
 // eslint-disable-next-line no-undef
@@ -26,6 +27,15 @@ socket.on('message', (message) => {
         createdAt: moment(message.createdAt).format('h:mm a'),
     });
     $messages.insertAdjacentHTML('beforeend', html);
+});
+
+socket.on('roomData', ({room, users}) => {
+    // eslint-disable-next-line no-undef
+    const html = Mustache.render(sidebarTemplate, {
+        room,
+        users,
+    });
+    document.querySelector('#sidebar').innerHTML = html;
 });
 
 socket.on('locationMessage', (message) => {
